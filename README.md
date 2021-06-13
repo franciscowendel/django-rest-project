@@ -1,6 +1,6 @@
 # django-rest-app
 
-A Django project with a lot of DRF (Django Rest Framework) on it.
+A Django project with a lot of DRF (Django Rest Framework) in it.
 
 Como executar o projeto:
 
