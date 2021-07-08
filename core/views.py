@@ -7,7 +7,11 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import permissions
-from core.permissions import EhSuperUser
+from core.permissions import (
+    EhSuperUserDelete,
+    EhSuperUserPut,
+    EhSuperUserPost,
+)
 
 
 class CursosAPIView(generics.ListCreateAPIView):
@@ -44,7 +48,9 @@ class AvaliacaoAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 class CursoViewSet(viewsets.ModelViewSet):
     permission_classes = (
-        EhSuperUser,
+        EhSuperUserDelete,
+        EhSuperUserPut,
+        EhSuperUserPost,
         permissions.DjangoModelPermissions,
     )
     queryset = Curso.objects.all()  # noqa
