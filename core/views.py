@@ -57,7 +57,7 @@ class CursoViewSet(viewsets.ModelViewSet):
     serializer_class = CursoSerializer
 
     @action(detail=True, methods=['get'])
-    def avaliacoes(self, request, pk=None):
+    def avaliacoes(self, request, pk=None):  # noqa
         self.pagination_class.page_size = 1
         avaliacoes = Avaliacao.objects.filter(curso_id=pk)  # noqa
         page = self.paginate_queryset(avaliacoes)
